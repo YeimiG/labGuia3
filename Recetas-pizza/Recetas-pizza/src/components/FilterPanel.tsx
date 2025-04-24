@@ -6,7 +6,7 @@ interface FilterPanelProps {
 
   const FilterPanel = ({ categories, activeFilters, onToggleFilter }: FilterPanelProps) => {
     return (
-      <div className="bg-red-100 p-4 rounded-lg mb-6 sticky top-6">
+      <div className="bg-red-100 p-4 rounded-lg mb-6 sticky top-2">
         <h3 className="text-lg font-semibold mb-3">Filtrar por categoría</h3>
         <div className="flex flex-wrap gap-2">
           {categories.map(category => (

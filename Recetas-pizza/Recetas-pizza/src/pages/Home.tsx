@@ -17,8 +17,6 @@ const Home = () => {
     const saved = localStorage.getItem('favoriteRecipes')
     return saved ? JSON.parse(saved) : []
   })
-
-  // 🔍 Agrupar por publisher para usarlo como categoría
   const categories = Array.from(new Set(data?.recipes?.map(recipe => recipe.publisher) || []))
 
 
@@ -26,7 +24,7 @@ const Home = () => {
     if (activeFilters.length === 0) return true
     return activeFilters.includes(recipe.publisher)
   }) || []
-  
+
 
   const toggleFavorite = (recipe: Recipe) => {
     const isFavorite = favorites.some(fav => fav.id === recipe.id)
@@ -58,7 +56,7 @@ const Home = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Recetas de Pizza </h1>
+    
 
       <FilterPanel
         categories={categories}
